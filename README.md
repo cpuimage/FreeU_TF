@@ -7,7 +7,7 @@
 </br>
 
 
-<strong>We propose FreeU, a method that substantially improves diffusion model sample quality at no costs: no training, no additional parameter introduced, and no increase in memory or sampling time.</strong>
+<strong>FreeU, a method that substantially improves diffusion model sample quality at no costs: no training, no additional parameter introduced, and no increase in memory or sampling time.</strong>
 
 <div style="width: 100%; text-align: center; margin:auto;">
     <img style="width:100%" src="./readme_teaser.jpg"> 
@@ -16,7 +16,7 @@
 <img style="width:50%" src="./horse.jpg"><img style="width:50%" src="./horse_freeu.jpg">
 
 </div>
-:open_book: For more visual results, go checkout our <a href="https://chenyangsi.top/FreeU/" target="_blank">project page</a>
+:open_book: For more visual results, go checkout official <a href="https://chenyangsi.top/FreeU/" target="_blank">project page</a>
 </div>
 
 
