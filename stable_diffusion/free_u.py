@@ -43,14 +43,14 @@ def Fourier_filter(x, threshold=1, scale=0.9):
     return tf.cast(x_filtered, x_dtype)
 
 
-def free_u(h, hs_, active=False, b1=1.2, b2=1.4, s1=0.9, s2=0.2, threshold=1, axis=-1):
+def free_u(h, hs_, active=False, b1=1.2, b2=1.4, s1=0.9, s2=0.2, axis=-1):
     if active:
         if h.get_shape().as_list()[axis] == 1280:
             h1, h2 = tf.split(h, num_or_size_splits=2, axis=axis)
-
-            hs_ = Fourier_filter(hs_, threshold=threshold, scale=s1)
+            h = tf.keras.layers.Concatenate(axis=axis)([h1 * b1, h2])
+            hs_ = Fourier_filter(hs_, threshold=1, scale=s1)
         if h.get_shape().as_list()[axis] == 640:
             h1, h2 = tf.split(h, num_or_size_splits=2, axis=axis)
             h = tf.keras.layers.Concatenate(axis=axis)([h1 * b2, h2])
-            hs_ = Fourier_filter(hs_, threshold=threshold, scale=s2)
+            hs_ = Fourier_filter(hs_, threshold=1, scale=s2)
     return tf.keras.layers.Concatenate(axis=axis)([h, hs_])
